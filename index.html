@@ -9,7 +9,7 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
+            padding: 40px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -19,7 +19,7 @@
 
         .card {
             width: 600px;
-            height: 400px;
+            height: 550px;
             perspective: 1000px;
         }
 
@@ -57,12 +57,15 @@
         }
 
         .front h1 {
-            font-size: 1.8rem;
+            font-family: SnellRoundhand;
+            font-size: 3.3rem;
             margin: 10px 0;
         }
 
         .front p {
-            font-size: 1rem;
+            font-family: SnellRoundhand;
+            font-weight: bold;
+            font-size: 1.5rem;
             margin-bottom: 20px;
         }
 
@@ -95,19 +98,49 @@
             background-color: #ffffff;
             color: #333;
             transform: rotateY(180deg);
+            text-align: left;
+            font-family: Georgia;
             font-size: 1rem;
-            padding: 20px;
+            padding: 20px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Start content from the top */
+            align-items: flex-start;   /* Left align */
+        }
+        
+        .letter-content {
+            line-height: 1.6;
+        }
+
+        .letter-content .greeting {
+            margin-bottom: 10px;
+        }
+
+        .letter-content .body {
+            margin-bottom: 10px;
+        }
+
+        .letter-content .signature {
+            margin-top: 30px;
+            font-style: italic;
+            text-align: right;
         }
 
         .back p {
             margin: 10px 0;
+            font-style: italic;
         }
 
         .glitter-text {
             font-size: 1.1rem;
-            color: #ff69b4;
+            font-weight: bold;
+            font-family: SnellRoundhand;
+            color: #e30071;
             text-shadow: 0 0 8px #ff69b4, 0 0 15px #ff1493;
         }
+        <link href="
+https://cdn.jsdelivr.net/npm/fonts-archive-snell-roundhand@0.0.1/SnellRoundhand.min.css
+" rel="stylesheet">
     </style>
 </head>
 
@@ -117,14 +150,18 @@
             <!-- Front Page -->
             <div class="front">
                 <h1>Happy New Year!</h1>
-                <p>Wishing you and your loved ones a prosperous and joyful year ahead.</p>
-                <button class="greet-btn" onclick="flipCard()">Next Page</button>
+                <p>Wishing you and your loved ones a prosperous and joyful year ahead 😊🎉</p>
+                <br>
+                <button class="greet-btn" onclick="flipCard()">Click Here</button>
             </div>
             <!-- Back Page -->
             <div class="back">
-                <p class="glitter-text">Dear Colleagues,</p>
-                <p>Wishing you success and happiness this year!</p>
-                <p>Thank you for all your hard work!</p>
+              <div class="letter-content">
+                <p class="glitter-text">Dear Katie,</p>
+                <p>As we step into a brand new year, I wanted to express my heartfelt gratitude for your guidance, support, and leadership during our time working together. You are truly inspiring, leading by example rather than mere words—a quality that showcases your exceptional leadership. The way you handle everything with such warmth and positivity—it’s another of the many reasons you're an amazing leader! Wishing you and your loved ones a year filled with joy, good health, and success. May this year bring you as much positivity and growth as you’ve inspired in others, including me.</p>
+                <p>Have a Great 2025,</p>
+                <p class="glitter-text">Jaideep</p>
+              </div>
             </div>
         </div>
     </div>
