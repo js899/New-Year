@@ -27,6 +27,11 @@
             text-align: center;
         }
 
+        .card .front,
+        .card .back {
+            display: none;
+        }
+
         .card .front {
             background-color: #ff6347;
             padding: 50px;
@@ -78,19 +83,18 @@
             background-color: #e04e3a;
         }
 
-        .flip-button {
-            padding: 10px 20px;
-            margin: 10px;
-            font-size: 1rem;
+        .card .front .greet-btn {
+            padding: 15px 30px;
+            background-color: white;
+            border-radius: 12px;
+            border: none;
+            font-size: 1.2rem;
+            color: #ff6347;
             cursor: pointer;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            background-color: #f0f8ff;
         }
 
-        .flip-button:hover {
-            background-color: #e04e3a;
-            color: white;
+        .card .front .greet-btn:hover {
+            background-color: #ffe4e1;
         }
     </style>
 </head>
@@ -98,20 +102,40 @@
 <body>
 
     <div class="card">
-        <div class="front">
+        <div class="front" id="front-page">
             <h1>Happy New Year!</h1>
-            <p>To You and Your Family</p>
+            <p>Wishing you and your family a wonderful year ahead.</p>
+            <button class="greet-btn" onclick="openMessagePage()">Write a Message</button>
         </div>
-        <div class="back">
-            <p>Leave a message below:</p>
-            <textarea placeholder="Write your message here..."></textarea>
+
+        <div class="back" id="back-page">
+            <p>Leave a message for the receiving person:</p>
+            <textarea id="messageBox" placeholder="Write your message here..."></textarea>
             <button onclick="submitMessage()">Send Message</button>
         </div>
     </div>
 
     <script>
+        // Show page 1 (greeting) initially
+        document.getElementById("front-page").style.display = "block";
+        document.getElementById("back-page").style.display = "none";
+
+        // Function to open page 2 (message page)
+        function openMessagePage() {
+            document.getElementById("front-page").style.display = "none";
+            document.getElementById("back-page").style.display = "block";
+        }
+
+        // Function to handle the message submission
         function submitMessage() {
-            alert("Your message has been saved. Wishing you a joyous New Year!");
+            let message = document.getElementById("messageBox").value;
+            if (message.trim()) {
+                alert("Your message: '" + message + "' has been sent! Wishing you a joyous New Year!");
+                // Optionally reset message box after submission
+                document.getElementById("messageBox").value = "";
+            } else {
+                alert("Please write a message before submitting.");
+            }
         }
     </script>
 
