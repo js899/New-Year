@@ -50,39 +50,6 @@
             margin: 10px 0;
         }
 
-        .card .back {
-            background-color: #fff;
-            padding: 30px;
-            color: #333;
-            font-size: 1rem;
-            border-radius: 0 0 16px 16px;
-        }
-
-        .card .back textarea {
-            width: 90%;
-            height: 120px;
-            margin-top: 20px;
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            font-size: 1rem;
-        }
-
-        .card .back button {
-            background-color: #ff6347;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            padding: 12px 20px;
-            margin-top: 15px;
-            cursor: pointer;
-            font-size: 1.1rem;
-        }
-
-        .card .back button:hover {
-            background-color: #e04e3a;
-        }
-
         .card .front .greet-btn {
             padding: 15px 30px;
             background-color: white;
@@ -96,22 +63,37 @@
         .card .front .greet-btn:hover {
             background-color: #ffe4e1;
         }
+
+        .card .back {
+            background-color: #fff;
+            padding: 50px;
+            color: #333;
+            font-size: 1.5rem;
+            border-radius: 0 0 16px 16px;
+        }
+
+        .card .back p {
+            margin-bottom: 30px;
+        }
+
     </style>
 </head>
 
 <body>
 
     <div class="card">
+        <!-- Front page of the card -->
         <div class="front" id="front-page">
             <h1>Happy New Year!</h1>
-            <p>Wishing you and your family a wonderful year ahead.</p>
-            <button class="greet-btn" onclick="openMessagePage()">Write a Message</button>
+            <p>Wishing you and your loved ones a prosperous and joyful year ahead.</p>
+            <button class="greet-btn" onclick="openMessagePage()">Go to the Next Page</button>
         </div>
 
+        <!-- Back page of the card -->
         <div class="back" id="back-page">
-            <p>Leave a message for the receiving person:</p>
-            <textarea id="messageBox" placeholder="Write your message here..."></textarea>
-            <button onclick="submitMessage()">Send Message</button>
+            <p>Dear Colleagues,</p>
+            <p>As we bid farewell to the past year, I want to express my gratitude to all of you for your dedication and hard work. May this new year bring new opportunities and success for us all!</p>
+            <p>Here's to a year of continued collaboration and growth. Happy New Year to each one of you!</p>
         </div>
     </div>
 
@@ -124,18 +106,6 @@
         function openMessagePage() {
             document.getElementById("front-page").style.display = "none";
             document.getElementById("back-page").style.display = "block";
-        }
-
-        // Function to handle the message submission
-        function submitMessage() {
-            let message = document.getElementById("messageBox").value;
-            if (message.trim()) {
-                alert("Your message: '" + message + "' has been sent! Wishing you a joyous New Year!");
-                // Optionally reset message box after submission
-                document.getElementById("messageBox").value = "";
-            } else {
-                alert("Please write a message before submitting.");
-            }
         }
     </script>
 
