@@ -18,22 +18,22 @@
         }
 
         .card {
-            width: 80%;
-            max-width: 600px;
+            width: 600px;
+            height: 400px;
             perspective: 1000px;
         }
 
         .card-inner {
             position: relative;
             width: 100%;
-            height: 300px;
+            height: 100%;
             transform-style: preserve-3d;
-            transform: rotateX(0);
+            transform: rotateY(0deg);
             transition: transform 0.8s;
         }
 
         .card.is-flipped .card-inner {
-            transform: rotateX(180deg);
+            transform: rotateY(180deg);
         }
 
         .front,
@@ -44,42 +44,41 @@
             backface-visibility: hidden;
             border-radius: 16px;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
         }
 
         .front {
             background-color: #ff147e;
             color: white;
-            text-align: center;
-            padding: 50px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
         }
 
         .front h1 {
-            font-size: 2rem;
-            margin: 0;
-        }
-
-        .front p {
-            font-size: 1.2rem;
+            font-size: 1.8rem;
             margin: 10px 0;
         }
 
-        .front .greet-btn {
-            padding: 10px 20px;
+        .front p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .greet-btn {
+            padding: 10px 40px;
             background-color: white;
             border: none;
             color: #ff147e;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: bold;
             cursor: pointer;
-            border-radius: 12px;
-            box-shadow: 0 0 15px #ff147e;
-            animation: glow 0.5s infinite alternate;
+            border-radius: 8px;
+            animation: glow 1.5s infinite alternate;
         }
 
-        .front .greet-btn:hover {
+        .greet-btn:hover {
             background-color: #ffe4f1;
         }
 
@@ -95,21 +94,17 @@
         .back {
             background-color: #ffffff;
             color: #333;
-            transform: rotateX(180deg);
-            text-align: center;
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+            transform: rotateY(180deg);
+            font-size: 1rem;
+            padding: 20px;
         }
 
         .back p {
-            margin: 15px 0;
+            margin: 10px 0;
         }
 
-        .back .glitter-text {
-            font-size: 1.2rem;
-            font-weight: bold;
+        .glitter-text {
+            font-size: 1.1rem;
             color: #ff69b4;
             text-shadow: 0 0 8px #ff69b4, 0 0 15px #ff1493;
         }
@@ -117,21 +112,19 @@
 </head>
 
 <body>
-
     <div class="card" id="card">
         <div class="card-inner">
-            <!-- Front page -->
+            <!-- Front Page -->
             <div class="front">
                 <h1>Happy New Year!</h1>
                 <p>Wishing you and your loved ones a prosperous and joyful year ahead.</p>
                 <button class="greet-btn" onclick="flipCard()">Next Page</button>
             </div>
-
-            <!-- Back page -->
+            <!-- Back Page -->
             <div class="back">
-                <p>Dear Katie,</p>
-                <p class="glitter-text">Wishing you endless joy, success, and happiness in the new year!</p>
-                <p>Let's make it an unforgettable one!</p>
+                <p class="glitter-text">Dear Colleagues,</p>
+                <p>Wishing you success and happiness this year!</p>
+                <p>Thank you for all your hard work!</p>
             </div>
         </div>
     </div>
@@ -142,7 +135,6 @@
             card.classList.toggle("is-flipped");
         }
     </script>
-
 </body>
 
 </html>
